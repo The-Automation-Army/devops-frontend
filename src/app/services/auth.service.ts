@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
-import { LoginRequest, LoginResponse, User } from '../models/user';
+import { BaseUser, LoginRequest, LoginResponse, User } from '../models/user';
 import { environment } from 'src/environments/environment';
 import { StorageService } from './storage.service';
 
@@ -19,7 +19,7 @@ export class AuthService {
     private storageService: StorageService
   ) {}
 
-  register(user: User): Observable<User> {
+  register(user: User): Observable<BaseUser> {
     return this.httpClient.post<User>(`${environment().apiURL}/register`, user);
   }
 
