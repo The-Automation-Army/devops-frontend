@@ -9,14 +9,14 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build --prod
+RUN npm run build --omit=dev
 
 # NGINX SERVER
 FROM nginx:1.23.4-alpine
 
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=build /app/dist/devops-frontend /usr/share/nginx/html
 
-COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
 
