@@ -22,7 +22,15 @@ module.exports = function (config) {
     },
     reporters: ["dots"],
     autoWatch: true,
-    browsers: ["ChromeHeadless"],
+    browsers: ["ChromeHeadlessCI"],
+    customLaunchers: {
+      ChromeHeadlessCI: {
+        base: "ChromeHeadless",
+        flags: ["--no-sandbox"],
+      },
+    },
+    logLevel: config.LOG_ERROR,
     singleRun: true,
+    browserNoActivityTimeout: 40000,
   });
 };
