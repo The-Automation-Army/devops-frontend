@@ -5,24 +5,22 @@ import {
 } from '@angular/common/http/testing';
 
 import { AuthService } from './auth.service';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 
 describe('AuthService', () => {
-  let service: AuthService;
+  let authService: AuthService;
   let httpMock: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
     });
-    service = TestBed.inject(AuthService);
+    authService = TestBed.inject(AuthService);
     httpMock = TestBed.inject(HttpTestingController);
   });
 
-  afterEach(() => {});
-
   it('should be created', () => {
-    expect(service).toBeTruthy();
+    expect(AuthService).toBeTruthy();
   });
 
   it('should return token after user login', () => {
@@ -34,7 +32,7 @@ describe('AuthService', () => {
       token: 'generated-token',
     };
 
-    service
+    authService
       .login({ email: 'example@mail.com', password: 'strongPassword' })
       .subscribe((res) => {
         expect(res).toEqual(expectedResponse);
@@ -48,7 +46,7 @@ describe('AuthService', () => {
     req.flush(responseToken);
   });
 
-  it('should return the user created', () => {
+  it('should create a new user', () => {
     const expectedResponse = {
       username: 'john',
       email: 'john@example.com',
@@ -59,7 +57,7 @@ describe('AuthService', () => {
       email: 'john@example.com',
     };
 
-    service
+    authService
       .register({
         username: 'john',
         email: 'example@mail.com',
@@ -73,6 +71,7 @@ describe('AuthService', () => {
       method: 'POST',
       url: `${environment().apiURL}/register`,
     });
+
     req.flush(responseUser);
   });
 });
