@@ -18,8 +18,8 @@ const routes: Routes = [
     component: CreateAnimalComponent,
   },
   {
-    path: '*',
-    redirectTo: '',
+    path: '**',
+    redirectTo: 'animals',
     pathMatch: 'full',
   },
 ];

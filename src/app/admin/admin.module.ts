@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditAnimalComponent } from './pages/edit-animal/edit-animal.component';
 import { AnimalFormComponent } from './components/animal-form/animal-form.component';
 import { CreateAnimalComponent } from './pages/create-animal/create-animal.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { CreateAnimalComponent } from './pages/create-animal/create-animal.compo
     CommonModule,
     AdminRoutingModule,
     ReactiveFormsModule,
-    FormsModule
-  ]
+    FormsModule,
+    HttpClientModule,
+  ],
 })
-export class AdminModule { }
+export class AdminModule {}

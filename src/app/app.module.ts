@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { tokenGetterAccess } from './_helpers/jwt';
 import { environment } from 'src/environments/environment';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { environment } from 'src/environments/environment';
       },
     }),
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

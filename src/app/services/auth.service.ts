@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { BaseUser, LoginRequest, LoginResponse, User } from '../models/user';
-import { StorageService } from './storage.service';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -14,10 +13,7 @@ export class AuthService {
       'Content-Type': 'application/json',
     }),
   };
-  constructor(
-    private httpClient: HttpClient,
-    private storageService: StorageService
-  ) {}
+  constructor(private httpClient: HttpClient) {}
 
   register(user: User): Observable<BaseUser> {
     return this.httpClient.post<User>(`${environment().apiURL}/register`, user);
@@ -25,13 +21,17 @@ export class AuthService {
 
   login(user: LoginRequest): Observable<LoginResponse> {
     return this.httpClient
-      .post<LoginResponse>(`${environment().apiURL}/login`, user)
+      .post<LoginResponse>(
+        `${environment().apiURL}/login`,
+        user,
+        this.httpOptions
+      )
       .pipe(
-        tap((res: LoginResponse) => this.storageService.saveToken(res.token))
+        tap((res: LoginResponse) => localStorage.setItem('token', res.token))
       );
   }
 
   logout() {
-    this.storageService.removeToken();
+    localStorage.removeItem('token');
   }
 }
