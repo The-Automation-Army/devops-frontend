@@ -1,10 +1,19 @@
 pipeline {
     agent any
-
     stages {
+        stage('Build, Package & Tag') {
+            steps {
+                withCredentials([file(credentialsId: 'env-vars-zoo-fe', variable: 'env_file')]) {
+                    writeFile file: 'src/assets/.env', text: readFile(env_file)
+                }
+                sh '''BRANCH=$(echo $GIT_BRANCH | cut -b 8-11)
+                docker build -t frontend-zoo-$BRANCH:1.0.0-$BUILD_ID .'''
+            }
+        }
         stage('Deploy') {
             steps {
-                echo 'Deploying app'
+                sh '''BRANCH=$(echo $GIT_BRANCH | cut -b 8-11)
+                docker run --rm --name zoo-fe --detach --network zoo-network -p 3000:3000 frontend-zoo-$BRANCH:1.0.0-$BUILD_ID'''
             }
         }
     }
