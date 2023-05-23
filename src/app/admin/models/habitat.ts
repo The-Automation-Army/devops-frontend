@@ -1,4 +1,5 @@
 import { Animal } from "./animal";
+import { Zookeeper } from "./zookeeper";
 
 export interface Habitat {
     id?: string;
@@ -6,7 +7,7 @@ export interface Habitat {
     capacity: number;
     area: string;
     foodPercentage: number;
-    //zookeepers: Zookeeper[];
+    zookeepers: Zookeeper[];
     animals: Animal[];
 }
 
@@ -18,7 +19,7 @@ export const initialHabitatState: Habitat = {
     capacity: 0,
     area: '',
     foodPercentage: 0,
-    //zookeepers: [],
+    zookeepers: [],
     animals: [],
 };
 
@@ -27,6 +28,6 @@ export const initialHabitatRequest: HabitatRequest = {
     capacity: 0,
     area: '',
     foodPercentage: 0,
-    //zookeepers: [],
+    zookeepers: [],
     animals: [],
 };
