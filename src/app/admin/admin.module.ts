@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SupplierDetailComponent } from './components/supplier-detail/supplier-detail.component';
 import { SupplierFormComponent } from './components/supplier-form/supplier-form.component';
 import { CreateSupplierComponent } from './pages/create-supplier/create-supplier.component';
+import { EditSupplierComponent } from './pages/edit-supplier/edit-supplier.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { CreateSupplierComponent } from './pages/create-supplier/create-supplier
     AnimalFormComponent,
     CreateAnimalComponent,
     SupplierDetailComponent,
-    EditAnimalComponent,
+    EditSupplierComponent,
     SupplierFormComponent,
     CreateSupplierComponent,
   ],
