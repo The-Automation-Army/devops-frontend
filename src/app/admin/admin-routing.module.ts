@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AnimalsPageComponent } from '../pages';
 import { EditAnimalComponent } from './pages/edit-animal/edit-animal.component';
 import { CreateAnimalComponent } from './pages/create-animal/create-animal.component';
+import { SuppliersPageComponent } from './pages/suppliers-page/suppliers-page.component';
+import { EditSupplierComponent } from './pages/edit-supplier/edit-supplier.component';
+import { CreateSupplierComponent } from './pages/create-supplier/create-supplier.component';
 
 const routes: Routes = [
   {
@@ -16,6 +19,18 @@ const routes: Routes = [
   {
     path: 'createAnimal',
     component: CreateAnimalComponent,
+  },
+  {
+    path: 'suppliers',
+    component: SuppliersPageComponent,
+  },
+  {
+    path: 'suppliers/:id',
+    component: EditSupplierComponent
+  },
+  {
+    path: 'createSupplier',
+    component: CreateSupplierComponent,
   },
   {
     path: '**',
