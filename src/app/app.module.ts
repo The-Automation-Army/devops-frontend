@@ -14,11 +14,13 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { tokenGetterAccess } from './_helpers/jwt';
 import { environment } from 'src/environments/environment';
 import { AuthService } from './services/auth.service';
+import { SuppliersPageComponent } from './admin/pages/suppliers-page/suppliers-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnimalsPageComponent,
+    SuppliersPageComponent,
     LoginFormComponent,
     LoginPageComponent,
     RegisterFormComponent,
