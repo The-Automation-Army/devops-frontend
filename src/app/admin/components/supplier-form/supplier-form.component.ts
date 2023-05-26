@@ -15,10 +15,10 @@ export class SupplierFormComponent {
 
   supplierDataForm: FormGroup = new FormGroup({
     name: new FormControl(this.supplierData.name, [Validators.required]),
-    gender: new FormControl(this.supplierData.type, [Validators.required]),
-    weight: new FormControl(this.supplierData.email, [Validators.required]),
-    height: new FormControl(this.supplierData.telephone, [Validators.required]),
-    category: new FormControl(this.supplierData.address, [Validators.required]),
+    type: new FormControl(this.supplierData.type, [Validators.required]),
+    email: new FormControl(this.supplierData.email, [Validators.required]),
+    telephone: new FormControl(this.supplierData.telephone, [Validators.required]),
+    address: new FormControl(this.supplierData.address, [Validators.required]),
   });
 
   ngOnInit(): void {
