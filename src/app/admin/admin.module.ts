@@ -12,6 +12,10 @@ import { SupplierDetailComponent } from './components/supplier-detail/supplier-d
 import { SupplierFormComponent } from './components/supplier-form/supplier-form.component';
 import { CreateSupplierComponent } from './pages/create-supplier/create-supplier.component';
 import { EditSupplierComponent } from './pages/edit-supplier/edit-supplier.component';
+import { HabitatDetailComponent } from './components/habitat-detail/habitat-detail.component';
+import { HabitatFormComponent } from './components/habitat-form/habitat-form.component';
+import { CreateHabitatComponent } from './pages/create-habitat/create-habitat.component';
+import { EditHabitatComponent } from './pages/edit-habitat/edit-habitat.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +27,10 @@ import { EditSupplierComponent } from './pages/edit-supplier/edit-supplier.compo
     EditSupplierComponent,
     SupplierFormComponent,
     CreateSupplierComponent,
+    HabitatDetailComponent,
+    EditHabitatComponent,
+    HabitatFormComponent,
+    CreateHabitatComponent
   ],
   imports: [
     CommonModule,
