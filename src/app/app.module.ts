@@ -15,12 +15,14 @@ import { tokenGetterAccess } from './_helpers/jwt';
 import { environment } from 'src/environments/environment';
 import { AuthService } from './services/auth.service';
 import { SuppliersPageComponent } from './admin/pages/suppliers-page/suppliers-page.component';
+import { HabitatsPageComponent } from './admin/pages/habitats-page/habitats-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnimalsPageComponent,
     SuppliersPageComponent,
+    HabitatsPageComponent,
     LoginFormComponent,
     LoginPageComponent,
     RegisterFormComponent,
