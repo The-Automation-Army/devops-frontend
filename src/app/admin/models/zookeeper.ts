@@ -24,7 +24,7 @@ export const initialZookeeperState: Zookeeper = {
     habitats: [],
 };
 
-export const initialZooKeeperRequest: ZookeeperRequest = {
+export const initialZookeeperRequest: ZookeeperRequest = {
     name: '',
     responsibility: '',
     qualification: '',
