@@ -9,6 +9,9 @@ import { CreateSupplierComponent } from './pages/create-supplier/create-supplier
 import { HabitatsPageComponent } from './pages/habitats-page/habitats-page.component';
 import { EditHabitatComponent } from './pages/edit-habitat/edit-habitat.component';
 import { CreateHabitatComponent } from './pages/create-habitat/create-habitat.component';
+import { EditZookeeperComponent } from './pages/edit-zookeeper/edit-zookeeper.component';
+import { ZookeepersPageComponent } from './pages/zookeepers-page/zookeeper-page.component';
+import { CreateZookeeperComponent } from './pages/create-zookeeper/create-zookeeper.component';
 
 const routes: Routes = [
   {
@@ -46,6 +49,18 @@ const routes: Routes = [
   {
     path: 'createHabitat',
     component: CreateHabitatComponent,
+  },
+  {
+    path: 'zookeepers',
+    component: ZookeepersPageComponent,
+  },
+  {
+    path: 'zookeepers/:id',
+    component: EditZookeeperComponent,
+  },
+  {
+    path: 'createZookeeper',
+    component: CreateZookeeperComponent,
   },
   {
     path: '**',
