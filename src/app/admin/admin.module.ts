@@ -16,6 +16,10 @@ import { HabitatDetailComponent } from './components/habitat-detail/habitat-deta
 import { HabitatFormComponent } from './components/habitat-form/habitat-form.component';
 import { CreateHabitatComponent } from './pages/create-habitat/create-habitat.component';
 import { EditHabitatComponent } from './pages/edit-habitat/edit-habitat.component';
+import { ZookeeperDetailComponent } from './components/zookeeper-detail/zookeeper-detail.component';
+import { EditZookeeperComponent } from './pages/edit-zookeeper/edit-zookeeper.component';
+import { ZookeeperFormComponent } from './components/zookeeper-form/zookeeper-form.component';
+import { CreateZookeeperComponent } from './pages/create-zookeeper/create-zookeeper.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { EditHabitatComponent } from './pages/edit-habitat/edit-habitat.componen
     HabitatDetailComponent,
     EditHabitatComponent,
     HabitatFormComponent,
-    CreateHabitatComponent
+    CreateHabitatComponent,
+    ZookeeperDetailComponent,
+    EditZookeeperComponent,
+    ZookeeperFormComponent,
+    CreateZookeeperComponent
   ],
   imports: [
     CommonModule,
