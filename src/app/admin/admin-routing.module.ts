@@ -6,6 +6,9 @@ import { CreateAnimalComponent } from './pages/create-animal/create-animal.compo
 import { SuppliersPageComponent } from './pages/suppliers-page/suppliers-page.component';
 import { EditSupplierComponent } from './pages/edit-supplier/edit-supplier.component';
 import { CreateSupplierComponent } from './pages/create-supplier/create-supplier.component';
+import { HabitatsPageComponent } from './pages/habitats-page/habitats-page.component';
+import { EditHabitatComponent } from './pages/edit-habitat/edit-habitat.component';
+import { CreateHabitatComponent } from './pages/create-habitat/create-habitat.component';
 
 const routes: Routes = [
   {
@@ -31,6 +34,18 @@ const routes: Routes = [
   {
     path: 'createSupplier',
     component: CreateSupplierComponent,
+  },
+  {
+    path: 'habitats',
+    component: HabitatsPageComponent,
+  },
+  {
+    path: 'habitats/:id',
+    component: EditHabitatComponent,
+  },
+  {
+    path: 'createHabitat',
+    component: CreateHabitatComponent,
   },
   {
     path: '**',
