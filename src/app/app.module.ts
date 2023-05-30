@@ -16,6 +16,7 @@ import { AuthService } from './services/auth.service';
 import { SuppliersPageComponent } from './admin/pages/suppliers-page/suppliers-page.component';
 import { HabitatsPageComponent } from './admin/pages/habitats-page/habitats-page.component';
 import { ZookeepersPageComponent } from './admin/pages/zookeepers-page/zookeeper-page.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ZookeepersPageComponent } from './admin/pages/zookeepers-page/zookeeper
     LoginPageComponent,
     RegisterFormComponent,
     RegisterPageComponent,
-    ZookeepersPageComponent
+    ZookeepersPageComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

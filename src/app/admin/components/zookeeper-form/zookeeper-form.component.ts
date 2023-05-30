@@ -26,7 +26,7 @@ export class ZookeeperFormComponent {
 
   create(): void {
     this.zookeeperService.create(this.zookeeperData).subscribe();
-    this.router.navigate(['/admin/zookeeper']);
+    this.router.navigate(['/admin/zookeepers']);
   }
 
   get name() {

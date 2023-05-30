@@ -27,7 +27,7 @@ export class HabitatFormComponent {
 
   create(): void {
     this.habitatService.create(this.habitatData).subscribe();
-    this.router.navigate(['/admin/habitat']);
+    this.router.navigate(['/admin/habitats']);
   }
 
   get size() {
