@@ -22,7 +22,7 @@ pipeline {
               withCredentials([usernamePassword(credentialsId: 'ssh-credentials-vm', passwordVariable: 'pass', usernameVariable: 'userName')]) {
                     remote.user = userName
                     remote.password = pass
-                    sshScript remote: remote, script: "deploy.sh"
+                    sshScript remote: remote, command: "bash /home/tony/deploy.sh"
                  
                 }
             }
