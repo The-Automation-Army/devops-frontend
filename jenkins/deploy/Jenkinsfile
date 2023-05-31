@@ -16,7 +16,8 @@ pipeline {
             script {
               def remote = [:]
           remote.name = "server"
-          remote.host = "10.000.000.153"
+          remote.host = "2.tcp.ngrok.io"
+              remote.port = 16691
           remote.allowAnyHosts = true
               withCredentials([usernamePassword(credentialsId: 'ssh-credentials-vm', passwordVariable: 'pass', usernameVariable: 'userName')]) {
                     remote.user = userName
