@@ -22,10 +22,7 @@ pipeline {
               withCredentials([usernamePassword(credentialsId: 'ssh-credentials-vm', passwordVariable: 'pass', usernameVariable: 'userName')]) {
                     remote.user = userName
                     remote.password = pass
-                    writeFile file: 'abc.sh', text: 'ls'
-                    sshCommand remote: remote, command: 'for i in {1..5}; do echo -n \"Loop \$i \"; date ; sleep 1; done'
-                    sshCommand remote: remote, command: 'cd /home/tony/deploy_00/devops-frontend;git checkout develop;git pull origin develop; ng build'
-                    sshCommand remote: remote, command: 'ls -la'
+                    sshScript remote: remote, script: "deploy.sh"
                  
                 }
             }
