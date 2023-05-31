@@ -11,10 +11,22 @@ pipeline {
             }
         }
         stage('Deploy') {
-            steps {
-                sh '''BRANCH=$(echo $GIT_BRANCH | cut -b 8-11)
-                docker stop zoo-fe
-                docker run --rm --name zoo-fe --detach --network zoo-network -p 8000:80 frontend-zoo-$BRANCH:1.0.0-$BUILD_ID'''
+          def remote = [:]
+          remote.name = "server"
+          remote.host = "10.000.000.153"
+          remote.allowAnyHosts = true
+          steps {
+                withCredentials([usernamePassword(credentialsId: 'ssh-credentials-vm', passwordVariable: 'pass', usernameVariable: 'userName')]) {
+                    remote.user = userName
+                    remote.password = pass
+                    writeFile file: 'abc.sh', text: 'ls'
+                    sshCommand remote: remote, command: 'for i in {1..5}; do echo -n \"Loop \$i \"; date ; sleep 1; done'
+                    sshPut remote: remote, from: 'abc.sh', into: '.'
+                    sshGet remote: remote, from: 'abc.sh', into: 'bac.sh', override: true
+                    sshScript remote: remote, script: 'abc.sh'
+                    sshRemove remote: remote, path: 'abc.sh'
+                 
+                }
             }
         }
     }
